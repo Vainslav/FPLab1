@@ -10,16 +10,17 @@ permissions:
   contents: read
 
 jobs:
-
   test:
-
-    runs-on: ubuntu-22.04
-
-    container:
-      image: erlang:22.0.7
-
+    runs-on: ubuntu-18.04
+    
     steps:
     - uses: actions/checkout@v4
+    
+    - name: Setup Erlang
+      uses: erlef/setup-beam@v1
+      with:
+        otp-version: '22.0.7'
+        rebar3-version: '3.14.4'
     
     - name: Compile
       run: rebar3 compile
