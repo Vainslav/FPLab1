@@ -19,6 +19,8 @@ jobs:
       image: erlang:22.0.7
 
     steps:
+    - name: Set up OTP
+      uses: erlef/setup-beam@v1
     - uses: actions/checkout@v4
     - name: Compile
       run: rebar3 compile
