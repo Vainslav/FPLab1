@@ -13,7 +13,7 @@ jobs:
 
   test:
 
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
 
     container:
       image: erlang:22.0.7
